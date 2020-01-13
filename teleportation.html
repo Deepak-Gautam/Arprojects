@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>Urban Power model - Axeltorv</title>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script
+        src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <!-- <a-asset-item id="obj" src="/assets/Catapult.obj"></a-asset-item>
+            <a-asset-item id="mtl" src="/assets/Catapult.mtl"></a-asset-item> -->
+            <a-asset-item id="gltf" src="/assets/scene.gltf"></a-asset-item>
+        </a-assets>
+
+        <a-entity gltf-model="#gltf" scale="0.1 0.1 0.1" rotation="0 200 0" position="-2.991 0.473 1.009"></a-entity>
+
+        <a-entity id="cameraRig">
+            <a-entity id="head" camera wasd-controls look-controls></a-entity>
+            <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;" gearvr-controls>
+            </a-entity>
+            <a-entity id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;" gearvr-controls>
+            </a-entity>
+        </a-entity>
+
+        <a-sky color="#599"></a-sky>
+
+    </a-scene>
+
+</body>
+
+</html>
